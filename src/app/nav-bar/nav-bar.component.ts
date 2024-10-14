@@ -18,16 +18,16 @@ export class NavBarComponent {
 
 
   navigateToAgent(){
-    this.router.navigateByUrl('/agentInformation')
+    this.router.navigate(['agentInformation'])
   }
 
   navigateToTeam(){
-    this.router.navigateByUrl('/teamInformation')
+    this.router.navigate(['teamInformation'])
   }
   
 
   navigateToDashboard(){
-    this.router.navigateByUrl('')
+    this.router.navigate([''])
   }
   
 
