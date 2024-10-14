@@ -16,5 +16,20 @@ export class NavBarComponent {
 
   router = inject(Router)
 
+
+  navigateToAgent(){
+    this.router.navigateByUrl('/agentInformation')
+  }
+
+  navigateToTeam(){
+    this.router.navigateByUrl('/teamInformation')
+  }
+  
+
+  navigateToDashboard(){
+    this.router.navigateByUrl('')
+  }
+  
+
 }
 
