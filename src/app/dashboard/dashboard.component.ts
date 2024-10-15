@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Type } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { NavBarComponent } from "../nav-bar/nav-bar.component";
 import { TeamInformationComponent } from "../team-information/team-information.component";
-import { NgFor } from '@angular/common';
+import { NgComponentOutlet, NgFor } from '@angular/common';
+import { AgentInformationComponent } from "../agent-information/agent-information.component";
 
 
 export interface Tile {
@@ -15,11 +16,20 @@ export interface Tile {
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RouterOutlet, MatGridListModule, NavBarComponent, TeamInformationComponent, NgFor],
+  imports: [
+    RouterOutlet, 
+    MatGridListModule, 
+    NavBarComponent, 
+    TeamInformationComponent, 
+    NgFor, 
+    AgentInformationComponent, 
+    NgComponentOutlet
+  ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
+  teamInformation: Type<TeamInformationComponent> | null = TeamInformationComponent
 
   tiles: Tile[] = [
     {text: 'One', cols: 3, rows: 1, color: 'lightblue'},

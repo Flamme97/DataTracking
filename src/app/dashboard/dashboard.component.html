@@ -9,6 +9,16 @@
   </mat-grid-tile>
 </mat-grid-list>
 
+<mat-grid-list cols="4" rowHeight="300px">
+  <mat-grid-tile>
+    <ng-container [ngComponentOutlet]="teamInformation"></ng-container>
+    <app-team-information></app-team-information>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <app-agent-information></app-agent-information>
+  </mat-grid-tile>
+  
+</mat-grid-list>
 
 
 <router-outlet></router-outlet>
