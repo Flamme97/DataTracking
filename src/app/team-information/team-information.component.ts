@@ -15,18 +15,15 @@ import { ELEMENT_DATA } from '../interface/TeamsColumn.interface';
 })
 export class TeamInformationComponent {
 
+  @ViewChild(MatSort) sort!: MatSort ;
 
-    TableData: PeriodicElement[] = ELEMENT_DATA
-    
-
-
+  TableData: PeriodicElement[] = ELEMENT_DATA
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(this.TableData);
-
-  @ViewChild(MatSort) sort!: MatSort ;
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
   }
 
+  
 }
